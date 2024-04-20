@@ -9,7 +9,7 @@ environ.Env.read_env(env_file=BASE_DIR / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
-ALLOWED_HOSTS = ["0.0.0.0"]
+ALLOWED_HOSTS = [env("RENDER_EXTERNAL_HOSTNAME")]
 
 
 # Application definition

@@ -4,7 +4,7 @@ services:
       name: capricci-backend
       runtime: python
       buildCommand: "./build.sh"
-      startCommand: "python -m uvicorn config.wsgi:application"
+      startCommand: "python -m uvicorn config.wsgi:application --host 0.0.0.0"
       envVars:
           - key: SECRET_KEY
             generateValue: true

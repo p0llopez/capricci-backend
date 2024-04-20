@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "capricci-backend"
+version = "0.1.0"
+description = ""
+authors = ["Pol Lopez <pol.lopez.cano@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.0.4"
+pre-commit = "^3.7.0"
+django-ninja = "^1.1.0"
+django-environ = "^0.11.2"
+psycopg2 = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "W",
+  "I",
+  "N",
+  "UP",
+  "FBT",
+  "B",
+  "A",
+  "C4",
+  "DJ",
+  "EM",
+  "ICN",
+  "LOG",
+  "G",
+  "PIE",
+  "PT",
+  "RSE",
+  "RET",
+  "SIM",
+  "ARG",
+  "PTH",
+  "PL",
+  "PERF",
+  "RUF",
+  ]
+ignore = []
+fixable = ["ALL"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

@@ -6,7 +6,7 @@ authors = ["Pol Lopez <pol.lopez.cano@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.11.9"
 django = "^5.0.4"
 pre-commit = "^3.7.0"
 django-ninja = "^1.1.0"
@@ -24,7 +24,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.ruff]
 line-length = 120
 indent-width = 4
-target-version = "py312"
+target-version = "py311"
 
 [tool.ruff.lint]
 select = [

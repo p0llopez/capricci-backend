@@ -9,7 +9,7 @@ environ.Env.read_env(env_file=BASE_DIR / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
-ALLOWED_HOSTS = [env("RENDER_EXTERNAL_HOSTNAME")]
+ALLOWED_HOSTS = [env("RENDER_EXTERNAL_HOSTNAME", default="localhost")]
 
 
 # Application definition
@@ -24,7 +24,12 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = []
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    "src.iam",
+    "src.order",
+    "src.product",
+    "src.customer",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -89,12 +94,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "iam.User"
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_ODE = "es-es"
-TIME_ZONE = "UTC"
+LANGUAGE_ODE = "en-us"
+TIME_ZONE = "Europe/Madrid"
 USE_I18N = True
 USE_TZ = True
 
@@ -108,7 +115,5 @@ if not DEBUG:
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# Media files
+MEDIA_ROOT = BASE_DIR / "media"

@@ -24,7 +24,12 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = []
 
-LOCAL_APPS = ["src.iam"]
+LOCAL_APPS = [
+    "src.iam",
+    "src.order",
+    "src.product",
+    "src.customer",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -108,3 +113,7 @@ STATIC_URL = "/static/"
 if not DEBUG:
     STATIC_ROOT = BASE_DIR / "staticfiles"
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+
+# Media files
+MEDIA_ROOT = BASE_DIR / "media"

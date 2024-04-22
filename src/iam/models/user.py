@@ -4,5 +4,4 @@ from src.commons.models import BaseModel
 
 
 class User(BaseModel, AbstractUser):
-    # ...
     pass

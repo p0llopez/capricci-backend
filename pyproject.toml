@@ -56,7 +56,7 @@ select = [
   "PERF",
   "RUF",
   ]
-ignore = []
+ignore = ["RUF012"]
 fixable = ["ALL"]
 exclude = ["*/migrations/*"]
 

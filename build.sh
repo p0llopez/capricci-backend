@@ -18,5 +18,5 @@ python manage.py migrate
 echo "Creating superuser..."
 if [[ $CREATE_SUPERUSER ]];
 then
-  python -m manage.py createsuperuser --no-input
+  python manage.py createsuperuser --no-input
 fi

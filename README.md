@@ -1,5 +1,5 @@
 Pending:
-Admin Interface
+Admin Interface (improve names)
 Endpoints
 check django migrations
 improve pipelines github actions

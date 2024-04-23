@@ -27,6 +27,9 @@ class Customer(BaseModel):
             models.UniqueConstraint(fields=["email"], name="unique_email"),
         ]
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
     def save(self, *args, **kwargs):
         self.email = self.email.lower()
         self.first_name = self.first_name.capitalize()

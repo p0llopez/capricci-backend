@@ -9,7 +9,7 @@ environ.Env.read_env(env_file=BASE_DIR / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
-ALLOWED_HOSTS = [env("RENDER_EXTERNAL_HOSTNAME", default="localhost")]
+ALLOWED_HOSTS = [env("RENDER_EXTERNAL_HOSTNAME", default="localhost"), "localhost", "127.0.0.1"]
 
 
 # Application definition

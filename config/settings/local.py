@@ -22,7 +22,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = ["ninja_extra"]
 
 LOCAL_APPS = [
     "src.iam",

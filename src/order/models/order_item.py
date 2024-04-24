@@ -9,3 +9,6 @@ class OrderItem(BaseModel):
 
     order = models.ForeignKey("Order", on_delete=models.CASCADE)
     product = models.ForeignKey("product.Product", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Order {self.order.id} - {self.product.name} x {self.quantity}"

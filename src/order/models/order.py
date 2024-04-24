@@ -13,3 +13,6 @@ class Order(BaseModel):
 
     customer = models.ForeignKey("customer.Customer", on_delete=models.CASCADE)
     shipping_address = models.ForeignKey("customer.Address", on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Order {self.id} by {self.customer.first_name} {self.customer.last_name}"

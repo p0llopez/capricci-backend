@@ -9,6 +9,7 @@ class OrderAdmin(admin.ModelAdmin):
     search_fields = ("id", "customer__first_name", "customer__last_name", "customer__email")
     list_filter = ("status", "payment_status")
     autocomplete_fields = ("customer", "shipping_address")
+    readonly_fields = ("created_at", "updated_at")
 
     def changelist_view(self, request, extra_context=None):
         extra_context = extra_context or {}
@@ -22,6 +23,7 @@ class OrderItemAdmin(admin.ModelAdmin):
     search_fields = ("id", "order__id", "product__name")
     list_filter = ("order__status", "order__payment_status")
     autocomplete_fields = ("order", "product")
+    readonly_fields = ("created_at", "updated_at")
 
     def changelist_view(self, request, extra_context=None):
         extra_context = extra_context or {}

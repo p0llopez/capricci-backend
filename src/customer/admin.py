@@ -11,6 +11,7 @@ class CustomerAdmin(admin.ModelAdmin):
     list_display = ("first_name", "last_name", "email", "phone_number")
     search_fields = ("first_name", "last_name", "email", "phone_number")
     ordering = ("created_at", "updated_at")
+    readonly_fields = ("created_at", "updated_at")
 
     def changelist_view(self, request, extra_context=None) -> TemplateResponse:
         extra_context = extra_context or {}
@@ -24,6 +25,7 @@ class AddressAdmin(admin.ModelAdmin):
     search_fields = ("address", "city", "country", "zip_code", "customer__first_name", "customer__last_name")
     list_filter = ("city", "country", "zip_code")
     autocomplete_fields = ("customer",)
+    readonly_fields = ("created_at", "updated_at")
 
     def get_queryset(self, request: HttpRequest) -> QuerySet[Address]:
         return super().get_queryset(request).select_related("customer")

@@ -8,6 +8,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "brand", "category", "price", "stock", "is_active")
     search_fields = ("id", "name", "brand", "category")
     list_filter = ("brand", "category", "is_active")
+    readonly_fields = ("created_at", "updated_at")
 
     def changelist_view(self, request, extra_context=None):
         extra_context = extra_context or {}

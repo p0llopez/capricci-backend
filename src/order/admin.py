@@ -8,7 +8,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ("id", "customer", "total_price", "status", "payment_status")
     search_fields = ("id", "customer__first_name", "customer__last_name", "customer__email")
     list_filter = ("status", "payment_status")
-    autocomplete_fields = ("customer", "shipping_address")
+    autocomplete_fields = ("customer", "address")
     readonly_fields = ("created_at", "updated_at")
 
     def changelist_view(self, request, extra_context=None):

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "capricci-backend"
-version = "0.1.0"
+version = "1.0.0"
 description = ""
 authors = ["Pol Lopez <pol.lopez.cano@gmail.com>"]
 readme = "README.md"
@@ -16,6 +16,8 @@ whitenoise = {extras = ["brotli"], version = "^6.6.0"}
 uvicorn = "^0.29.0"
 gunicorn = "^22.0.0"
 pillow = "^10.3.0"
+django-ninja-extra = "^0.20.5"
+ninja-schema = "^0.13.6"
 
 
 [build-system]
@@ -56,7 +58,7 @@ select = [
   "PERF",
   "RUF",
   ]
-ignore = []
+ignore = ["RUF012"]
 fixable = ["ALL"]
 exclude = ["*/migrations/*"]
 

@@ -1,4 +1,5 @@
 fail_fast: true
+exclude: "/migrations/"
 
 repos:
     - repo: https://github.com/pre-commit/pre-commit-hooks
@@ -18,3 +19,12 @@ repos:
             args: [--fix]
           # Run the formatter.
           - id: ruff-format
+
+    - repo: local
+      hooks:
+        - id: check-django-migrations
+          name: Check Django migrations
+          entry: python manage.py makemigrations --check --settings=config.settings.local
+          language: system
+          types: [ python ]
+          pass_filenames: false

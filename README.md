@@ -1,6 +1,6 @@
 # Capricci Backend
 
-Its a python project that uses Django and django-ninja to create a REST API.
+It's a python project that uses Django and django-ninja to create a REST API.
 
 ## Table of Contents
 
@@ -17,13 +17,14 @@ Here are some tasks that are still pending:
 
 1. **Admin Interface**: Need to finish all related to admin interface (WIP).
 2. **Endpoints**: WIP.
-    - [x] **Customer Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **Address Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **Product Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **Order Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **OrderItem Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **Category Endpoints**: Create, Update, Delete, List, Detail.
-4. **Improve Pipelines GitHub Actions**: Use github actions to autodeploy, build, lint, tests, etc.
+    - [x] **Customer Endpoints**: Create, Update, Delete, List, Detail, Validate input data(WIP).
+    - [x] **Address Endpoints**: Create, Update, Delete, List, Detail.
+    - [x] **Product Endpoints**: Create, Update, Delete, List, Detail.
+    - [x] **Order Endpoints**: Create, Update, Delete, List, Detail.
+    - [x] **OrderItem Endpoints**: Create, Update, Delete, List, Detail.
+3. **Schema validations**: Need to add schema validations to all endpoints.
+4. **Tests**: Need to write tests for all endpoints.
+5. **Improve Pipelines GitHub Actions**: Use github actions to autodeploy, build, lint, tests, etc.
 
 ## Improvements
 

@@ -1,3 +1,8 @@
-from ninja import NinjaAPI
+from ninja_extra import NinjaExtraAPI
 
-api = NinjaAPI()
+api = NinjaExtraAPI(
+    title="Capricci API",
+    description="API for Capricci e-commerce platform",
+)
+
+api.auto_discover_controllers()

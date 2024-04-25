@@ -20,4 +20,4 @@ class UpdateAddressSchema(BaseModelSchema):
         model = Address
         include = "__all__"
         exclude = ("id", "created_at", "updated_at")
-        optional = ("address", "city", "country", "zip_code", "customer_id")
+        optional = ("__all__",)

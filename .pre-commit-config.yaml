@@ -24,7 +24,7 @@ repos:
       hooks:
         - id: check-django-migrations
           name: Check Django migrations
-          entry: python manage.py makemigrations --check
+          entry: python manage.py makemigrations --check --settings=config.settings.local
           language: system
           types: [ python ]
           pass_filenames: false

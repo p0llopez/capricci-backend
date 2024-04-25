@@ -20,9 +20,8 @@ Here are some tasks that are still pending:
     - [x] **Customer Endpoints**: Create, Update, Delete, List, Detail, Validate input data(WIP).
     - [x] **Address Endpoints**: Create, Update, Delete, List, Detail.
     - [ ] **Product Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **Order Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **OrderItem Endpoints**: Create, Update, Delete, List, Detail.
-    - [ ] **Category Endpoints**: Create, Update, Delete, List, Detail.
+    - [x] **Order Endpoints**: Create, Update, Delete, List, Detail.
+    - [x] **OrderItem Endpoints**: Create, Update, Delete, List, Detail.
 3. **Schema validations**: Need to add schema validations to all endpoints.
 4. **Tests**: Need to write tests for all endpoints.
 5. **Improve Pipelines GitHub Actions**: Use github actions to autodeploy, build, lint, tests, etc.

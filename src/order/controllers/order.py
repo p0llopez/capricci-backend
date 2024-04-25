@@ -22,17 +22,17 @@ class OrderController:
         return 200, Order.objects.all()
 
     @route.get("/{uuid:order_id}", response=[(200, OrderSchema)], url_name="retrieve")
-    def retrieve_customer(self, order_id: UUID):
+    def retrieve_order(self, order_id: UUID):
         return 200, self.get_object_or_exception(Order, id=order_id, error_message="Order not found")
 
     @route.put("/{uuid:order_id}", response=[(200, IdSchema), (400, DetailsSchema)], url_name="update")
-    def update_customer(self, order_id: UUID, payload: UpdateOrderSchema):
+    def update_order(self, order_id: UUID, payload: UpdateOrderSchema):
         instance = self.get_object_or_exception(Order, id=order_id, error_message="Order not found")
         updated_instance = payload.update(instance=instance)
         return 200, {"id": updated_instance.id}
 
     @route.delete("/{uuid:order_id}", response=[(204, None)], url_name="delete")
-    def delete_customer(self, order_id: UUID):
+    def delete_order(self, order_id: UUID):
         instance = self.get_object_or_exception(Order, id=order_id, error_message="Order not found")
         instance.delete()
         return 204, None

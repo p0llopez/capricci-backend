@@ -7,7 +7,7 @@ class Product(BaseModel):
     brand = models.CharField(max_length=255)
     category = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to="products/")
+    image = models.ImageField(upload_to="products")
     is_active = models.BooleanField(default=True)
     name = models.CharField(max_length=255)
     presentation = models.PositiveIntegerField()

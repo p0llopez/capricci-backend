@@ -20,6 +20,8 @@ django-ninja-extra = "^0.20.5"
 ninja-schema = "^0.13.6"
 django-storages = "^1.14.2"
 boto3 = "^1.34.93"
+faker = "^24.14.1"
+randimage = "^1.2"
 
 
 [build-system]
@@ -60,7 +62,7 @@ select = [
   "PERF",
   "RUF",
   ]
-ignore = ["RUF012"]
+ignore = ["RUF012", "G004"]
 fixable = ["ALL"]
 exclude = ["*/migrations/*"]
 

@@ -18,6 +18,8 @@ gunicorn = "^22.0.0"
 pillow = "^10.3.0"
 django-ninja-extra = "^0.20.5"
 ninja-schema = "^0.13.6"
+django-storages = "^1.14.2"
+boto3 = "^1.34.93"
 
 
 [build-system]

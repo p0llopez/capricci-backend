@@ -62,7 +62,7 @@ select = [
   "PERF",
   "RUF",
   ]
-ignore = ["RUF012", "G004"]
+ignore = ["RUF012", "G004", "ARG001"]
 fixable = ["ALL"]
 exclude = ["*/migrations/*"]
 

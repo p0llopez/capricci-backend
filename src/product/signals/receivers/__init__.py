@@ -1,0 +1,1 @@
+from .remove_image_from_s3 import remove_image_from_s3

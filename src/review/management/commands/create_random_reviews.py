@@ -20,10 +20,11 @@ class Command(BaseCommand):
         number_of_reviews = options["n"]
 
         for product in Product.objects.all():
-            for _ in range(number_of_reviews):
+            random_reviews = faker.pyint(min_value=0, max_value=number_of_reviews)
+            for _ in range(random_reviews):
                 Review.objects.create(
                     product=product,
-                    rating=faker.random_int(min=0, max=5),
+                    rating=faker.pyint(min_value=0, max_value=5),
                     comment=faker.paragraph(nb_sentences=2),
                     customer=None,
                 )

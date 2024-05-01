@@ -14,7 +14,7 @@ class Product(BaseModel):
     presentation_format = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     stock = models.PositiveIntegerField()
-    rating = models.DecimalField(max_digits=2, decimal_places=2, default=0)
+    rating = models.DecimalField(max_digits=3, decimal_places=2, default=0)
     quantity_reviews = models.PositiveIntegerField(default=0)
 
     def __str__(self):

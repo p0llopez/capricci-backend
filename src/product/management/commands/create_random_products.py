@@ -41,11 +41,19 @@ class Command(BaseCommand):
             Product.objects.create(
                 brand=faker.company(),
                 category=faker.word(),
-                description=faker.text(),
+                description=faker.paragraph(nb_sentences=5),
                 image=self.generate_random_image(name),
                 name=name,
                 presentation=faker.random_int(min=1, max=100),
-                presentation_format=faker.word(),
+                presentation_format=faker.random_element(
+                    elements=(
+                        "mililitros",
+                        "gramos",
+                        "unidades",
+                        "kilogramos",
+                        "litros",
+                    )
+                ),
                 price=faker.pydecimal(left_digits=2, right_digits=2, positive=True),
                 stock=faker.random_int(min=1, max=100),
             )

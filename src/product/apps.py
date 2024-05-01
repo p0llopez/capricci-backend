@@ -15,4 +15,4 @@ class ProductConfig(AppConfig):
             from .signals import receivers  # noqa F401
 
         except ImportError:
-            logger.error("Cannot import signals from Procurements")
+            logger.error("Cannot import signals from Review app.")

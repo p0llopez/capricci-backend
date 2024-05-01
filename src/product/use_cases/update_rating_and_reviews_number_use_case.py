@@ -15,5 +15,5 @@ class UpdateRatingAndReviewsNumberUseCase:
 
         with transaction.atomic():
             product.quantity_reviews = quantity_reviews
-            product.rating = total_rating / quantity_reviews
+            product.rating = round(total_rating / quantity_reviews, 2) if quantity_reviews else 0
             product.save()

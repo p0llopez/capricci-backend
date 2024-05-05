@@ -23,6 +23,7 @@ AWS_SECRET_ACCESS_KEY = env("R2_SECRET_KEY")
 AWS_STORAGE_BUCKET_NAME = env("R2_BUCKET_NAME")
 AWS_S3_ENDPOINT_URL = env("R2_ENDPOINT_URL")
 AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_CUSTOM_DOMAIN = "cdn.capriccipineda.es"
 
 # Static files (CSS, JavaScript, images)
 STATIC_LOCATION = "static"

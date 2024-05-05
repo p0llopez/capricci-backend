@@ -6,6 +6,7 @@ class ReviewSchema(BaseModelSchema):
     class Config:
         model = Review
         include = "__all__"
+        depth = 2
 
 
 class CreateReviewSchema(BaseModelSchema):

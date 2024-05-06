@@ -1,7 +1,7 @@
 from uuid import UUID
 
+from django.db.models import Q
 from ninja_extra import api_controller, route
-from ninja_extra.searching import Searching, searching
 
 from src.product.models import Product
 from src.product.schemas import ProductSchema
@@ -11,9 +11,11 @@ from src.review.schemas import ReviewSchema
 @api_controller("/products")
 class ProductController:
     @route.get("", response=[(200, list[ProductSchema])], url_name="list")
-    @searching(Searching, search_fields=["^name", "^brand"])
-    def list_products(self):
-        return 200, Product.objects.all()
+    def list_products(self, search: str | None = None):
+        queryset = Product.objects.all()
+        if search:
+            queryset = queryset.filter(Q(name__icontains=search) | Q(brand__icontains=search))
+        return 200, queryset
 
     @route.get("/{uuid:product_id}", response=[(200, ProductSchema)], url_name="retrieve")
     def retrieve_product(self, product_id: UUID):

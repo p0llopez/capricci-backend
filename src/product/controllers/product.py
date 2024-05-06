@@ -11,7 +11,7 @@ from src.review.schemas import ReviewSchema
 @api_controller("/products")
 class ProductController:
     @route.get("", response=[(200, list[ProductSchema])], url_name="list")
-    @searching(Searching, search_fields=["@name", "@description"])
+    @searching(Searching, search_fields=["@name", "@brand"])
     def list_products(self):
         return 200, Product.objects.all()
 

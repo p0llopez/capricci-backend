@@ -2,21 +2,18 @@ from ninja import ModelSchema
 
 from src.sales.models import Order
 
-
-class OrderSchema(ModelSchema):
-    class Meta:
-        model = Order
-        fields = "__all__"
+from .order_item import CreateOrderItemSchema
 
 
 class CreateOrderSchema(ModelSchema):
+    order_items: list[CreateOrderItemSchema] = []
+    points_used: int
+
     class Meta:
         model = Order
-        exclude = ("id", "created_at", "updated_at")
-
-
-class UpdateOrderSchema(ModelSchema):
-    class Meta:
-        model = Order
-        exclude = ("id", "created_at", "updated_at")
-        fields_optional = "__all__"
+        fields = (
+            "user",
+            "payment_status",
+            "shipping_price",
+            "status",
+        )

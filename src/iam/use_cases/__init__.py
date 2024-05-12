@@ -1,0 +1,1 @@
+from .update_points_use_case import UpdatePointsUseCase

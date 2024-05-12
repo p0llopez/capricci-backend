@@ -22,14 +22,13 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["ninja_extra", "corsheaders"]
+THIRD_PARTY_APPS = ["ninja_extra", "corsheaders", "ninja_jwt"]
 
 LOCAL_APPS = [
     "src.iam",
-    "src.order",
-    "src.product",
-    "src.customer",
-    "src.review",
+    "src.sales",
+    "src.content",
+    "src.crm",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

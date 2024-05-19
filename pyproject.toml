@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "capricci-backend"
-version = "1.0.0"
+version = "1.0.1"
 description = ""
 authors = ["Pol Lopez <pol.lopez.cano@gmail.com>"]
 readme = "README.md"

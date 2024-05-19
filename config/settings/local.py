@@ -122,7 +122,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 
 # CORS
-CORS_ALLOWED_ORIGINS = ["http://localhost:4321"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:4321", "https://shop.capriccipineda.es"]
 
 
 # Ninja JWT

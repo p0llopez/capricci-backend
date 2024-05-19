@@ -22,18 +22,19 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["ninja_extra"]
+THIRD_PARTY_APPS = ["ninja_extra", "corsheaders", "ninja_jwt"]
 
 LOCAL_APPS = [
     "src.iam",
-    "src.order",
-    "src.product",
-    "src.customer",
+    "src.sales",
+    "src.content",
+    "src.crm",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -116,4 +117,15 @@ if not DEBUG:
 
 
 # Media files
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+
+# CORS
+CORS_ALLOWED_ORIGINS = ["http://localhost:4321"]
+
+
+# Ninja JWT
+NINJA_JWT = {
+    "TOKEN_OBTAIN_PAIR_INPUT_SCHEMA": "src.iam.schemas.MyTokenObtainPairInputSchema",
+}

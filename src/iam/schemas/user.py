@@ -12,10 +12,16 @@ class CreateUserSchema(ModelSchema):
 class UserSchema(ModelSchema):
     class Meta:
         model = User
-        exclude = ("password",)
+        fields = ("id", "first_name", "last_name", "email", "points")
 
 
 class LoginUserSchema(ModelSchema):
     class Meta:
         model = User
         fields = ("email", "password")
+
+
+class BasicUserSchema(ModelSchema):
+    class Meta:
+        model = User
+        fields = ("id", "first_name", "last_name")

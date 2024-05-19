@@ -1,1 +1,1 @@
-from .product import CreateProductSchema, ProductSchema, UpdateProductSchema
+from .product import BasicProductSchema, CreateProductSchema, ProductSchema, UpdateProductSchema

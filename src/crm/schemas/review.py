@@ -1,18 +1,31 @@
-from ninja import ModelSchema
+from datetime import datetime
+from uuid import UUID
 
+from ninja import ModelSchema, Schema
+
+from src.content.schemas import BasicProductSchema
 from src.crm.models import Review
+from src.iam.schemas.user import BasicUserSchema
 
 
-class ReviewSchema(ModelSchema):
-    class Meta:
-        model = Review
-        fields = "__all__"
+class ReviewSchema(Schema):
+    id: UUID
+    user: BasicUserSchema
+    rating: int
+    comment: str
+    product: BasicProductSchema
+    created_at: datetime
+    updated_at: datetime
 
 
 class CreateReviewSchema(ModelSchema):
     class Meta:
         model = Review
-        exclude = ("id", "created_at", "updated_at", "rating")
+        exclude = (
+            "id",
+            "created_at",
+            "updated_at",
+        )
 
 
 class UpdateReviewSchema(ModelSchema):

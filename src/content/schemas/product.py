@@ -9,6 +9,12 @@ class ProductSchema(ModelSchema):
         fields = "__all__"
 
 
+class BasicProductSchema(ModelSchema):
+    class Meta:
+        model = Product
+        fields = ("id", "name", "brand", "image")
+
+
 class CreateProductSchema(ModelSchema):
     class Meta:
         model = Product

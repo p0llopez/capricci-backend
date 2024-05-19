@@ -11,7 +11,7 @@ class Order(BaseModel):
     status = models.CharField(max_length=50)
     total_price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    user = models.ForeignKey("iam.User", on_delete=models.CASCADE)
+    user = models.ForeignKey("iam.User", on_delete=models.CASCADE, related_name="orders")
 
     def __str__(self):
         return f"Order {self.id} by {self.user.first_name} {self.user.last_name}"

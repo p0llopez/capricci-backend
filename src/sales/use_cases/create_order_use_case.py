@@ -29,7 +29,7 @@ class CreateOrderUseCase:
     @transaction.atomic
     def __call__(self, dto: CreateOrderUseCaseDTO):
         items_price = sum(item.quantity * item.unit_price for item in dto.order_items)
-        discount = dto.points_used * 0.01
+        discount = dto.points_used * Decimal("0.01")
         total_price = items_price + dto.shipping_price - discount
         order = Order.objects.create(
             user_id=dto.user_id,
@@ -52,7 +52,7 @@ class CreateOrderUseCase:
         ]
         OrderItem.objects.bulk_create(order_items)
 
-        points_to_add = total_price * 0.1
+        points_to_add = total_price * Decimal("0.1")
         UpdatePointsUseCase()(user_id=dto.user_id, points_to_add=points_to_add, points_to_remove=dto.points_used)
 
         return order.id

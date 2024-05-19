@@ -123,3 +123,9 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 # CORS
 CORS_ALLOWED_ORIGINS = ["http://localhost:4321"]
+
+
+# Ninja JWT
+NINJA_JWT = {
+    "TOKEN_OBTAIN_PAIR_INPUT_SCHEMA": "src.iam.schemas.MyTokenObtainPairInputSchema",
+}

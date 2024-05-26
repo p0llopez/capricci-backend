@@ -10,21 +10,6 @@ It's a python project that uses Django and django-ninja to create a REST API.
 -   [Usage](#usage)
 -   [License](#license)
 
-## Pending Tasks
-
-Here are some tasks that are still pending:
-
-1. ~~**Admin Interface**: Need to finish all related to admin interface (WIP).~~
-2. ~~**Endpoints**: WIP.~~
-    - ~~**Customer Endpoints**: Create, Update, Delete, List, Detail.~~
-    - ~~**Address Endpoints**: Create, Update, Delete, List, Detail.~~
-    - ~~**Product Endpoints**: Create, Update, Delete, List, Detail.~~
-    - ~~**Order Endpoints**: Create, Update, Delete, List, Detail.~~
-    - ~~**OrderItem Endpoints**: Create, Update, Delete, List, Detail.~~
-3. **Schema validations**: Need to add schema validations to all endpoints.~~
-4. **Password change on customers**
-5. **Tests**: Need to write tests for all endpoints.
-
 ## Improvements
 
 Here are some improvements that can be made:

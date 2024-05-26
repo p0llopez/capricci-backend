@@ -9,6 +9,8 @@ environ.Env.read_env(env_file=BASE_DIR / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
+DJANGO_SETTINGS_MODULE = env("DJANGO_SETTINGS_MODULE", default="config.settings.production")
+
 ALLOWED_HOSTS = [env("RENDER_EXTERNAL_HOSTNAME", default="localhost"), "localhost", "127.0.0.1"]
 
 

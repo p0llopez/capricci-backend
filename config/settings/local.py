@@ -24,7 +24,7 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = ["ninja_extra", "corsheaders", "ninja_jwt"]
+THIRD_PARTY_APPS = ["ninja_extra", "corsheaders", "ninja_jwt", "django_extensions"]
 
 LOCAL_APPS = [
     "src.iam",

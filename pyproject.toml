@@ -23,6 +23,8 @@ faker = "^24.14.1"
 randimage = "^1.2"
 django-cors-headers = "^4.3.1"
 django-ninja-jwt = "^5.3.1"
+pytest = "^8.2.1"
+django-extensions = "^3.2.3"
 
 
 [build-system]
@@ -63,7 +65,7 @@ select = [
   "PERF",
   "RUF",
   ]
-ignore = ["RUF012", "G004", "ARG001"]
+ignore = ["RUF012", "G004", "ARG001", "PLR2004"]
 fixable = ["ALL"]
 exclude = ["*/migrations/*"]
 

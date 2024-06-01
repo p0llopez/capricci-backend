@@ -52,7 +52,7 @@ class CreateOrderUseCase:
         ]
         OrderItem.objects.bulk_create(order_items)
 
-        points_to_add = total_price * Decimal("0.1")
+        points_to_add = int(total_price * 10)
         UpdatePointsUseCase()(user_id=dto.user_id, points_to_add=points_to_add, points_to_remove=dto.points_used)
 
         return order.id
